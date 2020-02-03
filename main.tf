@@ -6,6 +6,7 @@ resource "stripe_product" "service" {
 resource "stripe_plan" "pricing" {
   count    = length(var.pricing_plans)
   product  = stripe_product.service.id
+  nickname = lookup(var.pricing_plans[count.index], "name")
   amount   = lookup(var.pricing_plans[count.index], "amount")
   interval = lookup(var.pricing_plans[count.index], "interval", "month")
   currency = lookup(var.pricing_plans[count.index], "currency", "eur")

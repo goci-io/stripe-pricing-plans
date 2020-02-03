@@ -10,6 +10,7 @@ variable "api_token" {
 
 variable "pricing_plans" {
   type        = list(object({
+    name     = string
     amount   = number
     interval = string
     currency = string
