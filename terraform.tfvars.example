@@ -1,0 +1,10 @@
+name             = "example" 
+api_token        = "xy"
+webhook_endpoint = "https://webhooks.corp.eu1.goci.io" 
+pricing_plans    = [
+  {
+    interval = "month"
+    currency = "eur"
+    amount   = 999
+  }
+]
